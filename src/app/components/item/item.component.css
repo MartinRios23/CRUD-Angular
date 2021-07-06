@@ -1,0 +1,82 @@
+.row .titulo, .row .cantidad, .row .precio, .row .total, .row .actions {
+  padding: 0 5px;
+}
+
+.row, .row .acciones {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Montserrat", Helvetica, sans-serif;
+}
+
+.row .titulo, .row .cantidad, .row .precio, .row .total, .row .actions {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  height: 15px;
+  background-color: lightblue;
+}
+
+.row .titulo {
+  width: 20%;
+}
+
+.row .precio {
+  width: 15%;
+}
+
+.row .cantidad {
+  width: 10%;
+}
+
+.row .total {
+  width: 15%;
+  font-weight: bolder;
+  color: green;
+}
+
+.row .acciones {
+  width: 10%;
+  text-align: center;
+}
+
+.row .acciones a {
+  cursor: pointer;
+  background-color: lightblue;
+  padding: 5px 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 1px 1px black;
+          box-shadow: 0px 1px 1px black;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.row .acciones a:hover {
+  background-color: red;
+  color: white;
+}
+
+.completado {
+  text-decoration: line-through;
+  color: red;
+}
+
+.completado .total {
+  color: red;
+}
+/*# sourceMappingURL=item.component.css.map */

@@ -1,0 +1,91 @@
+//Variables
+$fuente: "Montserrat", Helvetica, sans-serif;
+
+//Mixins
+@mixin border($tamaño, $color) {
+    border: $tamaño solid $color;
+}
+
+//Herencia
+%pd{
+    padding: 0 5px;
+}
+
+%box-s{
+    box-sizing: border-box;
+}
+
+%alinear-centro{
+    justify-content: center;
+    align-items: center;
+}
+
+
+//Generales
+.row{
+    display: flex;
+    @extend %alinear-centro;
+    @extend %box-s;
+    font-family: $fuente;
+
+
+    //Cuerpo
+    .titulo, .cantidad, .precio, .total, .actions{
+        @extend %pd;
+        @include border(1px, black);
+        border-collapse: collapse;
+        padding: 10px;
+        height: 15px;
+        background-color: lightblue;
+    }
+    
+    .titulo{
+        width: 20%;
+    }
+
+    .precio{
+        width: 15%;
+    }
+
+    .cantidad{
+        width: 10%;
+    }
+
+    .total{
+        width: 15%;
+        font-weight: bolder;
+        color: green;
+    }
+
+    .acciones{
+        width: 10%;
+        text-align: center;
+        @extend %box-s;
+        
+        a{
+            cursor: pointer;
+            background-color: lightblue;
+            padding: 5px 25px;
+            @include border(1px, black);
+            border-radius: 5px;
+            box-shadow: 0px 1px 1px black;
+            transition: all .3s;
+        }
+
+        a:hover{
+            background-color: red;
+            color: white;
+        }
+
+    }
+
+}
+
+.completado{
+    text-decoration:  line-through;
+    color: red;
+
+    .total{
+        color:red;
+    }
+}
