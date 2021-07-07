@@ -2,8 +2,8 @@
 
     <app-total mensaje= "Total por pagar:" [total]="total"></app-total>
     <app-item 
-    *ngFor="let item of items" 
-    [item] = "item"
+    *ngFor="let x of items" 
+    [item] = "x"
     (deleteItem)= "deleteItem($event)"
     (toggleItem)= "toggleItem($event)">
 

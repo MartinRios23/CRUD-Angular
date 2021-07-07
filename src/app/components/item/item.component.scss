@@ -27,16 +27,15 @@ $fuente: "Montserrat", Helvetica, sans-serif;
     @extend %alinear-centro;
     @extend %box-s;
     font-family: $fuente;
+    margin-bottom: 15px;
 
 
     //Cuerpo
     .titulo, .cantidad, .precio, .total, .actions{
         @extend %pd;
-        @include border(1px, black);
-        border-collapse: collapse;
+        border-bottom: 1px solid #515151;
         padding: 10px;
         height: 15px;
-        background-color: lightblue;
     }
     
     .titulo{

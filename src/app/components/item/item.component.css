@@ -21,14 +21,13 @@
   display: -ms-flexbox;
   display: flex;
   font-family: "Montserrat", Helvetica, sans-serif;
+  margin-bottom: 15px;
 }
 
 .row .titulo, .row .cantidad, .row .precio, .row .total, .row .actions {
-  border: 1px solid black;
-  border-collapse: collapse;
+  border-bottom: 1px solid #515151;
   padding: 10px;
   height: 15px;
-  background-color: lightblue;
 }
 
 .row .titulo {

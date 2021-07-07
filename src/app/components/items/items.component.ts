@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { Item } from 'src/app/models/item';
+import {ItemService} from '../../services/item.service'
 
 @Component({
   selector: 'app-items',
@@ -12,40 +13,11 @@ export class ItemsComponent implements OnInit {
   items: Item[] = [];
   total:number = 0;
 
-  constructor() { }
+  constructor( private itemService:ItemService) { }
 
   ngOnInit(): void {
-    this.items = [
-      {
-        id: 1,
-        tittle: "Manzana",
-        price: 20,
-        quantity: 10,
-        completed: false
-      },
-      {
-        id: 2,
-        tittle: "Naranjas",
-        price: 15,
-        quantity: 35,
-        completed: false
-      },
-      {
-        id: 3,
-        tittle: "Peras",
-        price: 30,
-        quantity: 25,
-        completed: true
-      },
-      {
-        id: 4,
-        tittle: "Uvas",
-        price: 8,
-        quantity: 50,
-        completed: false
-      }
-    ]
-
+    // this.items = [];
+    this.items = this.itemService.getItems();
     this.getTotal();
   }
 
@@ -62,6 +34,6 @@ export class ItemsComponent implements OnInit {
     this.total = this.items
                 .filter(x => !x.completed)
                 .map(x => x.quantity * x.price)
-                .reduce((acc, item) => acc += item,0);
+                .reduce((acc, x) => acc += x,0);
   }
 }
